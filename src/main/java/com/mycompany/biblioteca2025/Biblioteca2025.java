@@ -212,7 +212,42 @@ public class Biblioteca2025 {
     }
 
     private void modificarLibros() {
+        Scanner sc=new Scanner(System.in); 
+        System.out.println("Dime el ISBN del libro que quieres modificar: ");
+        String isbn= sc.nextLine();
+        
+        int pos= buscaIsbn(isbn);
+        if (pos==-1) {
+            System.out.println("El libro que buscas no esta registrado");
+        } else {
+            System.out.println("Pulsa + si quieres aumentar el número de ejemplares o - si quieres disminuir la cantidad de estos");
+            String confirm= sc.nextLine();
+            if (confirm.equals("+"/"-")) {
+                 if (confirm.equals("+")) {
+                System.out.println("¿Cuantos ejemplares quieres añadir?");
+                int mas= sc.nextInt();
+                int ejemplar= libros.get(pos).getEjemplares();
+                int calculo2= ejemplar + mas;  
+                libros.get(pos).setEjemplares(calculo2);
+                System.out.println("Operación realizada con éxito");
+            } 
+            if (confirm.equals("-")) {
+                System.out.println("¿Cuantos ejemplares quieres quitar?");
+                int menos=sc.nextInt();
+                int ejemplar= libros.get(pos).getEjemplares();
+                int calculo2= ejemplar - menos; 
+                libros.get(pos).setEjemplares(calculo2);
+                System.out.println("Operación realizada con éxito");
+          
+            }
+            } else {
+                     System.out.println("No se ha detectado ningún símbolo +/-");
+            }
+           
+          
+        }
     }
+    
 
     private void listaLibros() {
         for (Libro l : libros) {
@@ -299,6 +334,8 @@ public class Biblioteca2025 {
                 System.out.println("No hay ningún préstamo con esos datos");
             }else{
                 prestamos.get(pos).setFechaDev(prestamos.get(pos).getFechaDev().plusDays(15));
+                prestamos.get(pos).setFechaPrest((LocalDate.now()));
+                System.out.println("Operación realizada con éxito");
             }
     }
     
@@ -310,7 +347,7 @@ public class Biblioteca2025 {
                 System.out.println("No hay ningún préstamo con esos datos");
             }else{
                 prestamos.get(pos).setFechaDev(LocalDate.now());
-                libros.get(buscaIsbn(isbnLibro)) .setEjemplares(libros.get(buscaIsbn(isbnLibro)).getEjemplares()+1);
+                libros.get(buscaIsbn(isbnLibro)).setEjemplares(libros.get(buscaIsbn(isbnLibro)).getEjemplares()+1);
                 System.out.println("Operación realizada con éxito");
             }
     }
