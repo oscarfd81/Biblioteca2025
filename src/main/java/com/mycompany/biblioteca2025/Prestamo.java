@@ -11,14 +11,14 @@ import java.time.LocalDate;
  * @author alu05d
  */
 public class Prestamo {
-    private Libro LibroPrest;
-    private Usuario UsuarioPrest;
+    private Libro libroPrest;
+    private Usuario usuarioPrest;
     private LocalDate fechaPrest;
     private LocalDate fechaDev;
 
-    public Prestamo(Libro LibroPrest, Usuario UsuarioPrest, LocalDate fechaPrest, LocalDate fechaDev) {
-        this.LibroPrest = LibroPrest;
-        this.UsuarioPrest = UsuarioPrest;
+    public Prestamo(Libro libroPrest, Usuario usuarioPrest, LocalDate fechaPrest, LocalDate fechaDev) {
+        this.libroPrest = libroPrest;
+        this.usuarioPrest = usuarioPrest;
         this.fechaPrest = fechaPrest;
         this.fechaDev = fechaDev;
     }
@@ -26,10 +26,10 @@ public class Prestamo {
     
     
     public Libro getLibroPrest() {
-        return LibroPrest;
+        return libroPrest;
     }
     public Usuario getUsuarioPrest() {
-        return UsuarioPrest;
+        return usuarioPrest;
     }
     public LocalDate getFechaPrest() {
         return fechaPrest;
@@ -42,10 +42,10 @@ public class Prestamo {
     
     
     public void setLibroPrest(Libro LibroPrest) {
-        this.LibroPrest = LibroPrest;
+        this.libroPrest = LibroPrest;
     }
     public void setUsuarioPrest(Usuario UsuarioPrest) {
-        this.UsuarioPrest = UsuarioPrest;
+        this.usuarioPrest = UsuarioPrest;
     }
     public void setFechaPrest(LocalDate fechaPrest) {
         this.fechaPrest = fechaPrest;
@@ -57,6 +57,6 @@ public class Prestamo {
        
     @Override
     public String toString() {
-        return  LibroPrest + "-" + UsuarioPrest + "-" + fechaPrest + "-" + fechaDev ;
+        return  libroPrest + "-" + usuarioPrest + "-" + fechaPrest + "-" + fechaDev ;
     }
 }
