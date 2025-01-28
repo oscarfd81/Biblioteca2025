@@ -1,7 +1,7 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  */
-//oscar no saco la eso gg
+//angel quiere macarrones
 package com.mycompany.biblioteca2025;
 import java.time.LocalDate;
 import java.util.ArrayList;
